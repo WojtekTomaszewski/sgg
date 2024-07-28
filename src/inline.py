@@ -105,8 +105,8 @@ def split_nodes_link(old_nodes):
 
 def text_to_textnodes(text):
   init_node = TextNode(text, "text")
-  nodes = split_nodes_delimiter([init_node], "*", "italic")
-  nodes = split_nodes_delimiter(nodes, "**", "bold")
+  nodes = split_nodes_delimiter([init_node], "**", "bold")
+  nodes = split_nodes_delimiter(nodes, "*", "italic")
   nodes = split_nodes_delimiter(nodes, "`", "code")
   nodes = split_nodes_image(nodes)
   nodes = split_nodes_link(nodes)
@@ -115,6 +115,6 @@ def text_to_textnodes(text):
 
 
 if __name__ == "__main__":
-  text = "This is **text** with an *italic* word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
+  text = "**I like Tolkien**. Read my [first post here](/majesty) (sorry the link doesn't work yet)"
   nodes = text_to_textnodes(text)
   print(nodes)
