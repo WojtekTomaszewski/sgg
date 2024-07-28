@@ -4,7 +4,7 @@ from pprint import pprint
 
 from htmlnode import ParentNode, LeafNode
 from inline import text_to_textnodes
-from textnode import TextNode, text_node_to_html_node
+from textnode import text_node_to_html_node
 
 block_type_paragraph = "paragraph"
 block_type_heading = "heading"
@@ -154,10 +154,8 @@ if __name__ == "__main__":
 # * This is another list item
 # '''
   markdown = '''
-1. one
-2. two
+**I like Tolkien**. Read my [first post here](/majesty) (sorry the link doesn't work yet)
 '''
   node = markdown_to_html_node(markdown)
-  pprint(markdown_to_html_node(markdown))
 
   pprint(node.to_html())
